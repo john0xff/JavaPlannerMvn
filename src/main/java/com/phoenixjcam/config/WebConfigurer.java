@@ -17,19 +17,18 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-
 /**
- * <strong> specify session factory, hibernate properties, data source, hibernate transaction, view resolver </strong>
- * <br>
- *  ComponentScan({ "com.phoenixjcam.*" }) annotation means 
- *  exactly the same as xml -> context:component-scan base-package="com.*" in dispatcher-servlet.xml
- *  
+ * <strong> specify session factory, hibernate properties, data source, hibernate transaction, view resolver </strong> <br>
+ * ComponentScan({ "com.phoenixjcam.*" }) annotation means exactly the same as xml -> context:component-scan
+ * base-package="com.*" in dispatcher-servlet.xml
+ * 
  * @author Bart88
  *
  */
 @EnableWebMvc
 @Configuration
-@ComponentScan({ "com.phoenixjcam.*" })
+@ComponentScan(
+{ "com.phoenixjcam.*" })
 @EnableTransactionManagement
 public class WebConfigurer extends WebMvcConfigurerAdapter
 {
@@ -37,8 +36,8 @@ public class WebConfigurer extends WebMvcConfigurerAdapter
 	public SessionFactory sessionFactory()
 	{
 		LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder(dataSource());
-		//builder.scanPackages("com.phoenixjcam.login.users.model").addProperties(getHibernateProperties());
-		
+		// builder.scanPackages("com.phoenixjcam.login.users.model").addProperties(getHibernateProperties());
+
 		return builder.buildSessionFactory();
 	}
 

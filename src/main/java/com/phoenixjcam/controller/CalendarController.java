@@ -22,10 +22,9 @@ public class CalendarController
 	public ModelAndView showCalendar()
 	{
 		ModelAndView modelAndView = new ModelAndView();
-			
-		
+
 		modelAndView.addObject("calendar", "calendar.jsp");
-		
+
 		return modelAndView;
 	}
 }
