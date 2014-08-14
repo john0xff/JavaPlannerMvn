@@ -33,7 +33,7 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableTransactionManagement
 public class WebConfigurer extends WebMvcConfigurerAdapter
 {
-	@Bean
+	@Bean(name = "sessionFactory")
 	public SessionFactory sessionFactory()
 	{
 		LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder(dataSource());

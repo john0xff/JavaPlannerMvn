@@ -8,10 +8,21 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class CalendarController
 {
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public ModelAndView test()
+	{
+		ModelAndView modelAndView = new ModelAndView();
+
+		modelAndView.addObject("test", "test.jsp");
+
+		return modelAndView;
+	}
+
 	@RequestMapping(value = "/calendar", method = RequestMethod.GET)
 	public ModelAndView showCalendar()
 	{
 		ModelAndView modelAndView = new ModelAndView();
+			
 		
 		modelAndView.addObject("calendar", "calendar.jsp");
 		
